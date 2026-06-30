@@ -1,6 +1,5 @@
 #codeAlpha_projectname_stock portifolio
 def stock_tracker():
-    # Hardcoded dictionary defining stock prices
     stock_prices = {
         "AAPL": 180,
         "TSLA": 250,
@@ -29,12 +28,10 @@ def stock_tracker():
                 print("Quantity cannot be negative.")
                 continue
             
-            # Update quantity if stock is already added, otherwise set it
             portfolio[stock_name] = portfolio.get(stock_name, 0) + quantity
         except ValueError:
             print("Invalid input. Please enter a whole number for quantity.")
 
-    # Calculate results
     print("\n--- Portfolio Summary ---")
     total_investment = 0
     summary_lines = ["--- Portfolio Summary ---"]
@@ -51,7 +48,6 @@ def stock_tracker():
     print(total_line)
     summary_lines.append(total_line)
 
-    # Optional: Save results to a .txt file
     try:
         with open("portfolio_summary.txt", "w") as file:
             file.write("\n".join(summary_lines))
